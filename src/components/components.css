@@ -1,0 +1,33 @@
+.frame {
+  min-height: 100vh;
+  position: relative;
+}
+
+.security-check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.security-header {
+  font-weight: 400;
+  color: whitesmoke;
+}
+
+.security-pass {
+  font-weight: 400;
+  font-size: 20pt;
+  width: 30vw;
+  border-radius: 6px;
+  border: none;
+}
+
+@media only screen and (max-width: 968px) {
+  .security-pass {
+    width: 80vw;
+  }
+  .security-header {
+    font-size: 38pt;
+  }
+}

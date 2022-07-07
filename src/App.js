@@ -1,7 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
+import SecurityCheck from "./components/SecurityCheck";
 
 function App() {
+  const [pass, setPass] = useState();
+
+  if (pass !== process.env.REACT_APP_SECURITY) {
+    return <SecurityCheck update={setPass} />;
+  }
+
   return (
     <div className="App">
       <header className="App-header">
