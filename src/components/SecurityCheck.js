@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
+import { AuthContext } from "../contexts/AuthContext";
 
 //css
 import "./components.css";
 
-const SecurityCheck = ({ update }) => {
+const SecurityCheck = () => {
+  const { setVerified } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    update(e.target[0].value);
+    if (process.env.REACT_APP_SECURITY === e.target[0].value) {
+      localStorage.setItem("token", e.target[0].value);
+      setVerified(true);
+    }
   };
 
   return (

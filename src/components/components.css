@@ -3,6 +3,7 @@
   position: relative;
 }
 
+/* Security Check */
 .security-check {
   position: absolute;
   top: 50%;
