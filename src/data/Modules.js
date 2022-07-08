@@ -6,6 +6,12 @@ export const ModulesList = [
       "https://res.cloudinary.com/venkatesh-kumar/image/upload/v1649884477/Screenshot_5_pib96b.png",
   },
   {
+    url: "https://venkatesh-tictactoe.netlify.app/",
+    title: "Notes",
+    thumbnail:
+      "https://res.cloudinary.com/venkatesh-kumar/image/upload/v1657289998/mecosys/Chegg-Play_featured-image_Notes-Not-Novels_b8sjoe.jpg",
+  },
+  {
     url: "https://weather-f7ef4.web.app/",
     title: "Weather",
     thumbnail:
@@ -15,7 +21,7 @@ export const ModulesList = [
     url: "https://netflix-clone-463dd.web.app/",
     title: "Netflix Clone",
     thumbnail:
-      "https://res.cloudinary.com/venkatesh-kumar/image/upload/v1657282997/mecosys/Netflix-16512110963x2_qe5l9s.jpg",
+      "https://variety.com/wp-content/uploads/2020/05/netflix-logo.png",
   },
   {
     url: "https://periodic-table-elements.web.app/",

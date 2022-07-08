@@ -9,7 +9,7 @@ const Item = () => {
       <Search />
       <div className="row item-holder mx-auto my-5">
         {ModulesList.map((r, i) => (
-          <div key={i} className="col-sm-12 col-md-3 my-2">
+          <div key={i} className="col-sm-12 col-md-3 my-2 item">
             <a href={r.url} target="_blank">
               <img
                 src={r.thumbnail}
