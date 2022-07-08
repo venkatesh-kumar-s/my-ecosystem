@@ -4,6 +4,8 @@ import { AuthContext } from "../contexts/AuthContext";
 
 //css
 import "./components.css";
+//encryption & decryption
+import CryptoJS from "crypto-js";
 
 const SecurityCheck = () => {
   const { setVerified } = useContext(AuthContext);
@@ -11,7 +13,10 @@ const SecurityCheck = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (process.env.REACT_APP_SECURITY === e.target[0].value) {
-      localStorage.setItem("token", e.target[0].value);
+      localStorage.setItem(
+        "token",
+        CryptoJS.AES.encrypt(e.target[0].value, "8801110025").toString()
+      );
       setVerified(true);
     }
   };
