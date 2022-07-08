@@ -33,7 +33,7 @@ export const ModulesList = [
     url: "https://venkateshkumar.netlify.app/",
     title: "Portfolio",
     thumbnail:
-      "https://res.cloudinary.com/venkatesh-kumar/image/upload/v1657288802/mecosys/Screenshot_3_hviuil.png",
+      "https://res.cloudinary.com/venkatesh-kumar/image/upload/v1657291463/mecosys/Screenshot_3_ap1i8a.png",
   },
   {
     url: "https://myeco.netlify.app/",
