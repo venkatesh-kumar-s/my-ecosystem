@@ -1,15 +1,17 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import Item from "../components/Item";
+import NavBar from "../components/NavBar";
+import Search from "../components/Search";
 
 const Home = () => {
-  const logout = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/";
-  };
-
   return (
-    <div>
-      <button onClick={logout}>logout</button>
+    <div className="frame">
+      {/* Navbar */}
+      <NavBar />
+      {/* Search */}
+
+      {/* Modules */}
+      <Item />
     </div>
   );
 };

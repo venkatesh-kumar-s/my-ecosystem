@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthRoutes, NonAuthRoutes } from "./routes";
 import { AuthContext } from "./contexts/AuthContext";
 import { useEffect, useState } from "react";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [verified, setVerified] = useState(false);
@@ -32,6 +33,7 @@ function App() {
                 ))}
           </Routes>
         </Router>
+        <ScrollToTop />
       </div>
     </AuthContext.Provider>
   );

@@ -32,3 +32,13 @@
     font-size: 38pt;
   }
 }
+
+/* Items */
+.search-bar {
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+  }
+}
