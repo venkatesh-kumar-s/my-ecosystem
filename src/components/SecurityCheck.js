@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { AuthContext } from "../contexts/AuthContext";
 
@@ -9,15 +9,27 @@ import CryptoJS from "crypto-js";
 
 const SecurityCheck = () => {
   const { setVerified } = useContext(AuthContext);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (process.env.REACT_APP_SECURITY === e.target[0].value) {
-      localStorage.setItem(
-        "token",
-        CryptoJS.AES.encrypt(e.target[0].value, "8801110025").toString()
-      );
-      setVerified(true);
+      setLoading(true);
+      setTimeout(() => {
+        localStorage.setItem(
+          "token",
+          CryptoJS.AES.encrypt(e.target[0]?.value, "8801110025").toString()
+        );
+        setVerified(true);
+        setLoading(false);
+      }, 3000);
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setError(true);
+      }, 3000);
     }
   };
 
@@ -29,11 +41,46 @@ const SecurityCheck = () => {
           <span className="text-success">Check</span>
         </h1>
         <form onSubmit={handleSubmit}>
-          <input
-            type="password"
-            className="col-12 my-5 shadow security-pass p-2 text-center"
-            required
-          />
+          {!loading ? (
+            error ? (
+              <>
+                <h1
+                  className="mx-auto mt-5 mb-5 p-2"
+                  style={{
+                    fontWeight: "bolder",
+                    color: "red",
+                    border: "1px dotted red",
+                    width: "fit-content",
+                  }}
+                >
+                  Access Denied
+                </h1>
+                <small className="text-secondary">
+                  Invalid credentials. Try{" "}
+                  <button
+                    className="btn btn-sm btn-link p-0"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setLoading(false);
+                      setError(false);
+                    }}
+                    style={{ textDecoration: "none" }}
+                  >
+                    login
+                  </button>{" "}
+                  again
+                </small>
+              </>
+            ) : (
+              <input
+                type="password"
+                className="col-12 my-5 shadow security-pass p-2 text-center"
+                required
+              />
+            )
+          ) : (
+            <div className="progress-bar progress-bar-striped progress-bar-animated col-12 my-5 mx-auto shadow security-pass p-4 bg-black"></div>
+          )}
         </form>
       </Container>
     </div>
