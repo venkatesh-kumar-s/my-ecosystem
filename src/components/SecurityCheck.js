@@ -76,6 +76,7 @@ const SecurityCheck = () => {
                 type="password"
                 className="col-12 my-5 shadow security-pass p-2 text-center"
                 required
+                autoComplete="off"
               />
             )
           ) : (
