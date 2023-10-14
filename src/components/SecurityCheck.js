@@ -45,7 +45,7 @@ const SecurityCheck = () => {
             error ? (
               <>
                 <h1
-                  className="mx-auto mt-5 mb-5 p-2"
+                  className="mx-auto mt-5 mb-4 py-1 px-2"
                   style={{
                     fontWeight: "bolder",
                     color: "red",
@@ -55,10 +55,10 @@ const SecurityCheck = () => {
                 >
                   Access Denied
                 </h1>
-                <small className="text-secondary">
+                <small className="text-secondary my-0">
                   Invalid credentials. Try{" "}
                   <button
-                    className="btn btn-sm btn-link p-0"
+                    className="btn btn-sm btn-link px-0 text-success"
                     onClick={(e) => {
                       e.preventDefault();
                       setLoading(false);
@@ -66,7 +66,7 @@ const SecurityCheck = () => {
                     }}
                     style={{ textDecoration: "none" }}
                   >
-                    login
+                    LOGIN
                   </button>{" "}
                   again
                 </small>
@@ -80,7 +80,9 @@ const SecurityCheck = () => {
               />
             )
           ) : (
-            <div className="progress-bar progress-bar-striped progress-bar-animated col-12 my-5 mx-auto shadow security-pass p-4 bg-black"></div>
+            <div className="my-0 p-1">
+              <div className="progress-bar progress-bar-striped progress-bar-animated col-12 my-5 mx-auto security-pass p-4 bg-black"></div>
+            </div>
           )}
         </form>
       </Container>
